@@ -11,7 +11,7 @@ function Form() {
 
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
-    console.log(name, value);
+
     setTodo({ ...todo, [name]: value });
   };
 

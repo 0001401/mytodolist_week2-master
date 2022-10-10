@@ -23,7 +23,7 @@ function Todo({ id, title, body, isDone }) {
         <p>{body}</p>
         <button onClick={() => todoDelete()}>Delete</button>
         <button onClick={() => todoCheck()}>
-          {isDone ? "Cancle" : "Done"}
+          {isDone ? "Cancel" : "Done"}
         </button>
       </Box>
     </li>
