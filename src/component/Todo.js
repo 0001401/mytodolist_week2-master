@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { checkTodo, deleteTodo } from "../redux/modules/todos";
+import { Link } from "react-router-dom";
 import Detail from "./Detail";
 
 function Todo({ id, title, body, isDone }) {
@@ -20,7 +21,7 @@ function Todo({ id, title, body, isDone }) {
     <li>
       <Box>
         <More>
-          <a href="./Detail">more</a>
+          <Link to={`/${id}`}>more</Link>
         </More>
         <h2>{title}</h2>
         <p>{body}</p>
