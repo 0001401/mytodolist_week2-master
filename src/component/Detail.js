@@ -33,7 +33,7 @@ const DIV = styled.div`
   height: 1000px;
   width: 100%;
   margin: auto;
-  background-color: #161514ff;
+
   & p {
     font-size: 12px;
   }
