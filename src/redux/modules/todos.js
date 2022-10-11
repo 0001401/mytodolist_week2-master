@@ -12,12 +12,13 @@ export const addTodo = (payload) => {
   };
 };
 
-export const checkTodo = (payload) => {
+export const checkTodo = (id) => {
   return {
     type: CHECK_TODO,
-    payload,
+    id,
   };
 };
+
 export const deleteTodo = (payload) => {
   return {
     type: DELETE_TODO,
@@ -44,12 +45,11 @@ const todos = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
       const id = state[state.length - 1]?.id + 1 || 0;
-      console.log(id);
       return [...state, { ...action.payload, id }];
     case CHECK_TODO:
       return state.map((todo) => {
-        if (todo.id === action.payload) {
-          return { ...todos, isDone: !todos.isDone };
+        if (todo.id === action.id) {
+          return { ...todo, isDone: !todo.isDone };
         } else {
           return todo;
         }

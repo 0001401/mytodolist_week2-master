@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { checkTodo, deleteTodo } from "../redux/modules/todos";
+import Detail from "./Detail";
 
 function Todo({ id, title, body, isDone }) {
   const dispatch = useDispatch();
+
+  //액션을 디스패치한다 -> 주문서를 접수한다
 
   const todoCheck = () => {
     dispatch(checkTodo(id));
@@ -17,7 +20,7 @@ function Todo({ id, title, body, isDone }) {
     <li>
       <Box>
         <More>
-          <a href="#!">more</a>
+          <a href="./Detail">more</a>
         </More>
         <h2>{title}</h2>
         <p>{body}</p>
@@ -62,6 +65,10 @@ const More = styled.div`
   margin-right: 20px;
   margin-top: 15px;
   font-size: 12px;
+  & a {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 export default Todo;

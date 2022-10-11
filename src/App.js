@@ -1,6 +1,7 @@
 import "./App.css";
 import styled from "styled-components";
 import Todolist from "./pages/Todolist";
+import Router from "./shared/Router";
 
 const BackGround = styled.div`
   width: 800px;
@@ -12,7 +13,7 @@ const BackGround = styled.div`
 function App() {
   return (
     <BackGround>
-      <Todolist />
+      <Router />
     </BackGround>
   );
 }
