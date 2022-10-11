@@ -16,9 +16,9 @@ function Form() {
   };
 
   const onSubmitHandeler = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // ㅎㅎ..새로고침 막는 애 form태그가 갖고있는 기본동작을 맞아주는 애
     dispatch(addTodo(todo));
-    setTodo(init);
+    setTodo(init); // 전송하면 초깃값으로 돌아갈 수 있게!
   };
 
   return (

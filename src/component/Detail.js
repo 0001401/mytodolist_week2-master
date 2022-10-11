@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 function Detail() {
   const params = useParams();
+  const navigate = useNavigate();
 
   const todos = useSelector((state) => state.todos);
 
@@ -14,23 +15,40 @@ function Detail() {
       <BOX>
         <h3>{todo.title}</h3>
         <p>{todo.body}</p>
+        <button
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          list
+        </button>
       </BOX>
     </DIV>
   );
 }
 
 const DIV = styled.div`
+  margin: 0px 0px 0px 0px;
   padding: 30px;
-  height: 800px;
+  height: 1000px;
+  width: 100%;
   margin: auto;
+  background-color: #161514ff;
   & p {
     font-size: 12px;
+  }
+  & button {
+    margin-top: 200px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid gray;
+    color: gray;
   }
 `;
 
 const BOX = styled.div`
-  margin: 10px 10px 10px 10px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
   border-radius: 25px;
   width: 300px;
   height: 150px;

@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 function List() {
+  
   const todos = useSelector((state) => state.todos);
   console.log(todos);
+
   return (
     <div>
       <Box>
