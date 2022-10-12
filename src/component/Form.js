@@ -39,7 +39,7 @@ function Form() {
             onChange={onChangeHandler}
             value={todo.body}
           />
-          <button>Add</button>
+          <button type="submit">Add</button>
         </DivBox>
       </form>
     </Box>
